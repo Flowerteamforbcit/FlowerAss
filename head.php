@@ -51,9 +51,12 @@
 
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#"><?php if(isset($_SESSION['username'])) echo "Hi ".$_SESSION['username']; ?></a></li>
-						<li><a href="login.php">Log in</a></li>
-						<li><a href="signup.php">Sign up</a></li>
-						<li><a href="logout.php">Log out</a></li>
+						<?php if(isset($_SESSION['username'])&& $_SESSION['username']=="harry"){echo '<li><a href="Dashboard.php">Dashboard</a></li>';}?>
+						<?php if(!array_key_exists('username', $_SESSION)) echo '<li><a href="login.php">Log in</a></li>'; ?>
+						<?php if(!array_key_exists('username', $_SESSION)) echo '<li><a href="signup.php">Sign up</a></li>'; ?>
+						<?php if(array_key_exists('username', $_SESSION)) echo '<li><a href="logout.php">Log out</a></li>'; ?>
+						
+
 						
 					</ul>
 
@@ -61,3 +64,4 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
+		
