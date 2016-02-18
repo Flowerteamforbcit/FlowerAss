@@ -3,10 +3,6 @@ session_start();
 include 'head.php';
 ?>
 
-    
-
-
-
     <div class="container">
         <hr>
         <div class="col-lg-6">
