@@ -41,3 +41,36 @@ tr:nth-child(even)
 tr:nth-child(odd) {
     background: #FFF
 }
+
+/*
+ shopping cart table css
+ */
+ @import url(https://fonts.googleapis.com/css?family=Hind);
+
+ body {
+    font-family: 'Hind', sans-serif;
+}
+
+#shoppingCartContainer {
+    background-color: #aabbff;
+    float: right;
+}
+
+#shoppingCart {
+    list-style-type: none;
+}
+
+#shoppingCart li {
+    width: 100%;
+}
+
+#productTable{
+    border: 1px solid black;
+    float: left;
+    width: 100%;
+}
+
+#productTable input {
+    width: 60px;
+}
+
