@@ -1,9 +1,8 @@
 <?php
-require ('db.php');
-include 'head.php';
 session_start();
+require 'db.php';
+include 'head.php';
 ?>
-
 
     
     <div class="container" align="center">
