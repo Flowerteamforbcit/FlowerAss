@@ -28,10 +28,10 @@ CREATE TABLE product (
   PRIMARY KEY (ID)
 );
 
-INSERT INTO product (SKU, item_price, description) VALUES ('sk-2843y', 14.99, 'toaster');
-INSERT INTO product (SKU, item_price, description) VALUES ('sk-327623z', 3.99, 'napkins');
-INSERT INTO product (SKU, item_price, description) VALUES ('sk-438s3x', 1.99, 'coffee cups');
-INSERT INTO product (SKU, item_price, description) VALUES ('sk-yx28s9', 2.99, 'paper plates');
+INSERT INTO product (SKU, item_price, description) VALUES ('sk-2843y', 4.99, 'Rose');
+INSERT INTO product (SKU, item_price, description) VALUES ('sk-327623z', 3.99, 'Iris');
+INSERT INTO product (SKU, item_price, description) VALUES ('sk-438s3x', 4.59, 'Lily');
+INSERT INTO product (SKU, item_price, description) VALUES ('sk-yx28s9', 5.99, 'Sunflower');
 
 
 CREATE TABLE cart_product (
@@ -49,3 +49,6 @@ INSERT INTO cart_product (cart_id, product_id) VALUES (1, 1);
 INSERT INTO cart_product (cart_id, product_id) VALUES (1, 2);
 INSERT INTO cart_product (cart_id, product_id) VALUES (2, 1);
 INSERT INTO cart_product (cart_id, product_id) VALUES (2, 2);
+
+
+
