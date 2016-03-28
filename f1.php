@@ -22,10 +22,11 @@ include 'head.php';
 
         </div>
         <div class="col-lg-6">
-            <h4><strong>Expresstion of Love</strong></h4>
+            <h4><strong>Expression of Love</strong></h4>
 
             <div>
                 <h5> SELECT YOUR PRODUCT</h5>
+                
             </div>
         </div>
     </div>
