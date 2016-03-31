@@ -79,7 +79,7 @@ loadScripts();
                 $affectedRows = $scm->checkoutCart($_SESSION['id']);
 
                 if($affectedRows > 0) {
-
+					
                     session_unset();
                     session_destroy();
                     $data = array("status" => "success", "msg" => "Cart successfully checked out.");
