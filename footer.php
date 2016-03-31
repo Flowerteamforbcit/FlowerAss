@@ -14,7 +14,7 @@
                             </nav>
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <strong>This function will be open soon</strong>
+<!--                            <strong>This function will be open soon</strong>-->
                         </div>
                     </div>
                 </div>

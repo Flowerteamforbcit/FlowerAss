@@ -49,11 +49,11 @@ include 'head.php';
         <form id="ajax-contact" class="col-lg-4 col-md-4 col-md-offset-4 col-lg-offset-4" method="post"
               action="">
             <fieldset class="form-group">
-                <label for="name">Name:</label>
+                <label for="name">Your Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
             </fieldset>
             <fieldset class="form-group">
-                <label for="email">Your Email:</label>
+                <label for="email">Your Email</label>
                 <input type="email" class="form-control" name="email" id="email" required>
                 <small class="text-muted">We'll never share your email with anyone else.</small>
             </fieldset>

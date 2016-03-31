@@ -58,6 +58,7 @@ if (typeof jQuery === 'undefined') {
     var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
     setTimeout(callback, duration)
     return this
+    
   }
 
   $(function () {
