@@ -43,10 +43,11 @@ require 'aboutProduct.php';
 
 
 <div id="content">
+	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/counter.js"></script>
 	<script type="text/javascript" src="js/shcart.js"></script>
-
+	<h1>FUCK</h1>
 	<h2> Flowers</h2>
 	<div class="row">   
 		
