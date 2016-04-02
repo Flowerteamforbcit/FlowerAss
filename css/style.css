@@ -5,39 +5,44 @@
 }
 
 .footer-menu {
-    margin-left:0;
-    padding:0 0 30px 0;
+    margin-left: 0;
+    padding: 0 0 30px 0;
 }
 
 .footer-menu li {
-    display:inline;
-    list-style-type:none;
+    display: inline;
+    list-style-type: none;
 }
+
 .footer-menu li a {
-    border-left:1px solid #404040;
+    border-left: 1px solid #404040;
     padding: 0 8px;
 }
+
 .footer-menu > li:first-child > a {
-    border-left:none;
-    padding:0 8px 0 0;
+    border-left: none;
+    padding: 0 8px 0 0;
 }
 
-
-#logo{
-    width: 80px;
+#logo {
+    padding-top: 21px;
+    width: 60px;
+    float: left;
 }
 
-#storename{
-    font-size: 80px;    
+#storename {
+    font-size: 80px;
 }
 
 table, tr, th, td {
     border: 0px solid black;
     padding: 10px;
 }
-tr:nth-child(even) 
-{background: #CBC
+
+tr:nth-child(even) {
+    background: #CBC
 }
+
 tr:nth-child(odd) {
     background: #FFF
 }
@@ -45,11 +50,7 @@ tr:nth-child(odd) {
 /*
  shopping cart table css
  */
- @import url(https://fonts.googleapis.com/css?family=Hind);
-
- body {
-    font-family: 'Hind', sans-serif;
-}
+@import url(https://fonts.googleapis.com/css?family=Hind);
 
 #shoppingCartContainer {
     background-color: #aabbff;
@@ -64,7 +65,7 @@ tr:nth-child(odd) {
     width: 100%;
 }
 
-#productTable{
+#productTable {
     border: 1px solid black;
     float: left;
     width: 100%;
@@ -74,3 +75,130 @@ tr:nth-child(odd) {
     width: 60px;
 }
 
+/*img.bg{
+    min-height: 100%;
+    min-width: 1024px;
+
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+@media screen and(max-width: 1024px){
+    img.bg{
+        left: 50%;
+        margin-left: -512px;
+    }
+}
+body{
+    margin: 0;
+    padding: 20px 0 0 0;
+
+}
+
+*/
+/*#backgroundimg{*/
+/*background-image: url(../img/background.png);*/
+/*background-position: left top;*/
+/*background-repeat: no-repeat;*/
+/*background-size: 100%;*/
+/*padding: 0px;*/
+/*}*/
+/*.jumbotron{*/
+/*background: rgb(200,54,42);*/
+/*background: rgba(200,54,54,0.5);*/
+/*}*/
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#full-screen-background-image {
+    z-index: -999;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0.6;
+}
+
+#wrapper {
+    position: relative;
+    width: auto;
+    min-height: 400px;
+    margin: auto;
+    color: #333;
+}
+
+#jtcontact.jumbotron {
+    opacity: 0.85;
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+
+#storename.jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#storename.jumbotron h2 {
+    font-size: .7em;
+
+}
+
+.navbar-default {
+    background-color: #eee;
+    border-color: #eee;
+    border-top: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+#content.jumbotron {
+    opacity: 0.85;
+}
+
+#wrapper {
+    padding-top: 15px;
+    padding-bottom: 540px;
+}
+
+.thumbnail {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-align: center;
+}
+
+/*font*/
+/*store name*/
+#storename.jumbotron h2 {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+/*navbar*/
+.navbar-default {
+    font-family: 'Crimson Text', serif;
+    font-weight: bold;
+}
+
+/*Products*/
+.thumbnailwrapper {
+    font-family: 'Crimson Text', serif;
+}
+
+/*contactus page*/
+#Contactus.container {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.2em;
+}

@@ -4,11 +4,12 @@ require 'db.php';
 include 'head.php';
 ?>
 
-
-    <div class="container" align="center">
+<div class="jumbotron" id="jtcontact">
+    <div class="container" align="center" id="Contactus">
 
         <h2>Get In Touch</h2>
-        <p>We'd love to hear from you! Send us a message using the form below, or email us</p>
+        <p>We'd love to hear from you!</p>
+        <p>Send us a message using the form below</p>
         <!--        <p>-->
         <!--            <a href="mailto:zgp7777@gmail.com">Send Mail</a>-->
         <!--        </p>-->
@@ -46,27 +47,27 @@ include 'head.php';
         $dbh = null;
         ?>
 
-        <form id="ajax-contact" class="col-lg-4 col-md-4 col-md-offset-4 col-lg-offset-4" method="post"
-              action="">
-            <fieldset class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" required>
-                <small class="text-muted">We'll never share your email with anyone else.</small>
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="message">Tell us your story</label>
-                <textarea class="form-control" id="message" name="message" required rows="3"></textarea>
-            </fieldset>
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <form id="ajax-contact" class="col-lg-6 col-md-6 col-md-offset-3 col-lg-offset-3" method="post"
+        action="">
+        <fieldset class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+            <small class="text-muted">We'll never share your email with anyone else.</small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="message">Tell us your story</label>
+            <textarea class="form-control" id="message" name="message" required rows="3"></textarea>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
 
-        </form>
-    </div>
+    </form>
+</div>
 
-
+</div>
 
 <?php
 
