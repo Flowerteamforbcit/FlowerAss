@@ -19,10 +19,11 @@ if (Utils::isGET()) {
             $sku = $row['SKU'];
             $price = $row['item_price'];
             $desc = $row['description'];
+				
 
-
-            $html .= "		<div class='col-md-4 thumbnailwrapper' >
+            $html .= "		<div class='col-md-3 thumbnailwrapper ' >
 			<a href='#' class='thumbnail'>
+			<div class='panel panel-default'>
 				 <img src=$path alt=$desc style='width:150px;height:150px'>
 				 <br/>
 				<p data-sku-desc='$sku'>$desc</p>
@@ -30,8 +31,10 @@ if (Utils::isGET()) {
 				<p>model# $sku</p>
 				-->
 				<strong>$</strong><strong data-sku-price='$sku'>$price</strong>
+				
 			</a>			
-			<input data-sku-add='$sku' type='button' value='Add to cart' class='btn btn-primary'/>
+			<input data-sku-add='$sku' type='button' value='Add to cart' class='btn btn-primary btn-block'/>
+			</div>
 		</div>";
 
 

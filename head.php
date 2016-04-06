@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="homepage.php">Flower shop name</a>
+                <a class="navbar-brand" href="homepage.php">The Flower</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,7 +70,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><?php if (isset($_SESSION['username'])) echo "Hi " . $_SESSION['username']; ?></a>
                     </li>
-                    <?php if (isset($_SESSION['username']) && $_SESSION['username'] == "harry") {
+                    <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == "harry" || $_SESSION['username'] == "Admin")) {
                         echo '<li><a href="Dashboard.php">Dashboard</a></li>';
                     } ?>
                     <?php if (!array_key_exists('username', $_SESSION)) echo '<li><a href="login.php">Log in</a></li>'; ?>

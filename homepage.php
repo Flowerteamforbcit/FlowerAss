@@ -19,13 +19,11 @@ require 'aboutProduct.php';
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
 			<a href="login.php">
-				<img src="img/widesample.png" alt="sample">
+				<img src="img/sample1.jpg" alt="sample">
 			</a>
 		</div>
 		<div class="item">
-			<a href="signup.php">
-				<img src="img/widesample1.png" alt="sample2">
-			</a>
+				<img src="img/sample2.jpg" alt="sample2">
 		</div>
 
 	</div>
@@ -42,12 +40,12 @@ require 'aboutProduct.php';
 </div>
 
 
-<div id="content">
+<div class="jumbotron" id="content">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/counter.js"></script>
 	<script type="text/javascript" src="js/shcart.js"></script>
 
-	<h2> Flowers</h2>
+	<h2>Best Sellers</h2>
 	<div class="row">   
 		
 		<div id="productslistforhome">
