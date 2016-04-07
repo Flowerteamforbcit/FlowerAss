@@ -10,10 +10,9 @@ loadScripts();
         $parameters = new Parameters("POST");
 
         $action = $parameters->getValue('action');
-        $login = $parameters->getValue('name');
-        $id = $parameters->getValue('id');
+        $login = $parameters->getValue('username');
 
-        //$data = array("action" => $action, "name" => $login);
+        //$data = array("action" => $action, "login" => $login);
         if($action == 'delete' && !empty($login)) {
 
             $um = new UserManager();
@@ -22,26 +21,24 @@ loadScripts();
             echo json_encode($data, JSON_FORCE_OBJECT);
             return;
 
-        } else if($action == 'update' && !empty($id)) {
+        } else if($action == 'update' && !empty($login)) {
             $newLogin = $parameters->getValue('newLogin');
 
-
-            
-   
             if(!empty($newLogin)) {
 
                 $um = new UserManager();
-                $count = $um->updateUserFirstName($id, $newLogin);
+                $count = $um->updateUserlogin($login, $newLogin);
                 if($count > 0) {
                     $data = array("status" => "success", "msg" =>
-                        "User '$id' updated with new first name ('$newLogin').");
+                        "User '$login' updated with new first name ('$newLogin').");
                 } else {
                     $data = array("status" => "fail", "msg" =>
-                        "User '$id' was NOT updated with new first name ('$newLogin').");
+                        "User '$login' was NOT updated with new first name ('$newLogin').");
                 }
             } else {
                 $data = array("status" => "fail", "msg" =>
-                    "New user name must be present - value was '$newLogin' for '$id'.");
+                    "New user name must be present - value was '$newLogin' for '$login'.");
+
             }
             echo json_encode($data, JSON_FORCE_OBJECT);
             return;
@@ -84,7 +81,7 @@ loadScripts();
                 $pw = $row['pw'];
                 $html .= "<tr>
 				<td class='id'><span>$id</span></td>
-                  <td class='name'><span>$login</span></td>
+                  <td class='login'><span>$login</span></td>
                   <td class='email'><span>$email </span></td>
                   <td class='pw'><span>$pw</span></td>
                   <td><input id='d-$id' class='delete' type='button' value='Delete'/></td>

@@ -37,8 +37,6 @@ class UserManager {
         return $affectedRows;
     }
 
-
-
     public function deleteUser($id) {
         $sql = "DELETE from customer WHERE id = '$id'";
         $affectedRows = $this->db->affectRows($sql);
