@@ -50,6 +50,23 @@
 
         loadProductsForHome();
 
+        function loadProductsForAll() {
+            $.ajax({
+                url: "./productsForHome.php",
+                type: "POST",
+                dataType: 'html',
+                success: function (returnedData) {
+                    //console.log("cart checkout response: ", returnedData);
+                    $("#productslistforhome").html(returnedData);
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.statusText, textStatus);
+                }
+            });
+        }
+
+        loadProductsForAll();
         // SESSION STORAGE GET ITEMS IF THEY ALREADY EXIST IN SESSION STORAGE
         function loadShoppingCartItems() {
 
