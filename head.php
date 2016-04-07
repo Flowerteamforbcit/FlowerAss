@@ -50,6 +50,7 @@
                             <script type="text/javascript" src="js/counter.js"></script>
                             <script>document.write(retCounter());</script>
                             items</a></li>
+                    <li><a href="allproducts.php">Flowers</a> </li>
                     <!--dropdown menu
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
