@@ -30,50 +30,48 @@
     float: left;
 }
 
-#storename {
-    font-size: 80px;
-}
 
-table, tr, th, td {
-    border: 0px solid black;
-    padding: 10px;
-}
+/* table CSS*/
+/*table, tr, th, td {*/
+/*border: 0px solid black;*/
+/*padding: 10px;*/
+/*}*/
 
-tr:nth-child(even) {
-    background: #CBC
-}
+/*tr:nth-child(even) {*/
+/*background: #CBC*/
+/*}*/
 
-tr:nth-child(odd) {
-    background: #FFF
-}
+/*tr:nth-child(odd) {*/
+/*background: #FFF*/
+/*}*/
 
-/*
- shopping cart table css
- */
-@import url(https://fonts.googleapis.com/css?family=Hind);
+/*!**/
+/*shopping cart table css*/
+/**!*/
+/*@import url(https://fonts.googleapis.com/css?family=Hind);*/
 
-#shoppingCartContainer {
-    background-color: #aabbff;
-    float: right;
-}
+/*#shoppingCartContainer {*/
+/*background-color: #aabbff;*/
+/*float: right;*/
+/*}*/
 
-#shoppingCart {
-    list-style-type: none;
-}
+/*#shoppingCart {*/
+/*list-style-type: none;*/
+/*}*/
 
-#shoppingCart li {
-    width: 100%;
-}
+/*#shoppingCart li {*/
+/*width: 100%;*/
+/*}*/
 
-#productTable {
-    border: 1px solid black;
-    float: left;
-    width: 100%;
-}
+/*#productTable {*/
+/*border: 1px solid black;*/
+/*float: left;*/
+/*width: 100%;*/
+/*}*/
 
-#productTable input {
-    width: 60px;
-}
+/*#productTable input {*/
+/*width: 60px;*/
+/*}*/
 
 /*img.bg{
     min-height: 100%;
@@ -152,7 +150,7 @@ html, body {
 }
 
 #storename.jumbotron h2 {
-    font-size: .7em;
+    font-size: 4.5em;
 
 }
 

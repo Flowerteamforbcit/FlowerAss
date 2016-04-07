@@ -5,16 +5,16 @@ loadScripts();
 
 $data = array("status" => "not set!");
 
-if(Utils::isGET()) {
+ if (Utils::isGET()) {
     $pm = new ProductManager();
     $rows = $pm->listProducts();
 
     $html = "";
-    if(!$rows || count($rows) == 0) {
+    if (!$rows || count($rows) == 0) {
         $html = "<tr><td>There are no results.</td></tr>";
     } else {
 
-        foreach($rows as $row) {
+        foreach ($rows as $row) {
             $sku = $row['SKU'];
             $price = $row['item_price'];
             $desc = $row['description'];
