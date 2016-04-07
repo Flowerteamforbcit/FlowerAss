@@ -1,7 +1,7 @@
 your name (full name), student ID, 
 	Yeonghun Ki
 	Viktor Radchenko
-	Kaitlyn Keong
+	Kaitlyn Kyung
 
 completion of the project (e.g., 100% complete)
 
