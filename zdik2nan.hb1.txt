@@ -1,0 +1,28 @@
+﻿Revert "April 7th"
+
+This reverts commit 933ce72f829afe322593343a4de7d22e626ee341, reversing
+changes made to e0bc02dc2263ba387dbedadfb1211cd4f66d3162.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	deleted:    .gitignore
+#	modified:   .idea/workspace.xml
+#	modified:   Dashboard.php
+#	deleted:    allproducts.php
+#	modified:   head.php
+#	modified:   homepage.php
+#	deleted:    img/Pinklily.jpg
+#	deleted:    img/pinkrose.jpg
+#	deleted:    img/redcarnations.jpg
+#	modified:   js/shcart.js
+#	modified:   productsForHome.php
+#	deleted:    signup_validation.php
+#	new file:   signupvalidation.php
+#	modified:   src/UserManager.php
+#	modified:   users.php
+#
+
