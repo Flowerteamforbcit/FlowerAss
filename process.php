@@ -34,4 +34,8 @@ switch($_GET['mode']){
     //     header("Location: list.php?id={$_POST['id']}");
     //     break;
 }
+
+// this php used to used for sign up DB process. however i've moved it to signup.php so 
+// we might not need it anymore
 ?>
+
