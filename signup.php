@@ -3,7 +3,6 @@ session_start();
 include 'head.php';
 ?>
 
-test
     <div class="container col-lg-4 col-md-4 col-md-offset-4 col-lg-offset-4">
         <h2>Sign up</h2>
 
