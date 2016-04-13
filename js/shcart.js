@@ -96,11 +96,10 @@ $(document).ready(function () {
                 + date + "'>" + desc + " " + qty + " x $" + price + " = " + subtotal
                 + " <input type='button' data-remove-button='remove' value='X'/></li>";
                 shoppingCartList.append(item);
-                counterPlus();
 
 
             }
-            console.log('cart items array, added', cartDataItems, retCounter());
+            console.log('cart items array, added', cartDataItems);
         }
 
         loadShoppingCartItems();
@@ -228,7 +227,6 @@ $('#productslistforhome').on('click', 'input[data-sku-add]', function () {
                 if (item['sku'] == thisInputSKU && item['date'] == thisInputDate) {
                     // remove from web storage
                     cartDataItems.splice(i, 1);
-                    counterMinus();
 
                 }
             }
@@ -262,7 +260,6 @@ $('#productslistforhome').on('click', 'input[data-sku-add]', function () {
                     if (returnedData['status'] == 'fail') {
                         $("#msgs").text(returnedData['reasons']);
                     } else {
-                      setZeroCounter();
                       sessionStorage.setObject('autosave', {items: []});
                   }
 

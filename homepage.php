@@ -18,7 +18,7 @@ require 'aboutProduct.php';
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <a href="login.php">
+            <a href="allProducts.php">
                 <img src="img/sample1.jpg" alt="sample">
             </a>
         </div>
@@ -42,7 +42,6 @@ require 'aboutProduct.php';
 
 <div class="jumbotron" id="content">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/counter.js"></script>
     <script type="text/javascript" src="js/shcart.js"></script>
 
     <h2>Best Sellers</h2>

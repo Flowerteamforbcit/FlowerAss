@@ -46,10 +46,7 @@
                     <li><a href="valentine.php">Valentine <span class="sr-only">(current)</span></a></li>
                 -->
 
-                    <li><a href="shopping-cart.php">Shopping Cart
-                            <script type="text/javascript" src="js/counter.js"></script>
-                            <script>document.write(retCounter());</script>
-                            items</a></li>
+                    <li><a href="shopping-cart.php">Shopping Cart</a></li>
                     <li><a href="allproducts.php">Flowers</a> </li>
                     <!--dropdown menu
                     <li class="dropdown">
