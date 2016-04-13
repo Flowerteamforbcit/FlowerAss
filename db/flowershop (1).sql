@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 31, 2016 at 06:10 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Apr 13, 2016 at 05:54 AM
+-- Server version: 5.6.20-log
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,12 +27,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `cart` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `state` varchar(30) NOT NULL,
   `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `total` decimal(15,2) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+  `total` decimal(15,2) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `cart`
@@ -65,7 +64,16 @@ INSERT INTO `cart` (`ID`, `state`, `time`, `total`) VALUES
 (30, 'checked out', '2016-03-31 08:03:55', '0.00'),
 (31, 'cancelled', '2016-03-31 08:08:19', '0.00'),
 (32, 'started', '2016-03-31 08:19:23', '0.00'),
-(33, 'started', '2016-03-31 16:08:32', '0.00');
+(33, 'started', '2016-03-31 16:08:32', '0.00'),
+(34, 'started', '2016-03-31 16:15:44', '0.00'),
+(35, 'cancelled', '2016-04-01 11:09:17', '0.00'),
+(36, 'started', '2016-04-06 16:22:01', '0.00'),
+(37, 'checked out', '2016-04-07 04:50:38', '0.00'),
+(38, 'checked out', '2016-04-07 16:58:40', '0.00'),
+(39, 'checked out', '2016-04-10 05:35:41', '0.00'),
+(40, 'checked out', '2016-04-13 05:41:09', '0.00'),
+(41, 'cancelled', '2016-04-13 05:46:37', '0.00'),
+(42, 'started', '2016-04-13 05:47:38', '0.00');
 
 -- --------------------------------------------------------
 
@@ -74,15 +82,12 @@ INSERT INTO `cart` (`ID`, `state`, `time`, `total`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `cart_product` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `cart_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`ID`),
-  KEY `product_id` (`product_id`),
-  KEY `cart_id` (`cart_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=73 ;
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
 
 --
 -- Dumping data for table `cart_product`
@@ -145,7 +150,20 @@ INSERT INTO `cart_product` (`ID`, `product_id`, `cart_id`, `quantity`, `time`) V
 (69, 4, 30, 1, '2016-03-31 08:05:57'),
 (70, 2, 30, 1, '2016-03-31 08:05:57'),
 (71, 1, 30, 1, '2016-03-31 08:05:57'),
-(72, 3, 30, 1, '2016-03-31 08:05:57');
+(72, 3, 30, 1, '2016-03-31 08:05:57'),
+(73, 1, 37, 1, '2016-04-07 06:37:02'),
+(74, 1, 37, 1, '2016-04-07 06:37:02'),
+(75, 1, 38, 1, '2016-04-07 16:58:51'),
+(76, 1, 38, 1, '2016-04-07 16:58:51'),
+(77, 1, 38, 1, '2016-04-07 16:58:51'),
+(78, 1, 38, 1, '2016-04-07 16:58:51'),
+(79, 1, 39, 1, '2016-04-10 05:35:49'),
+(80, 1, 39, 1, '2016-04-10 05:35:49'),
+(81, 1, 39, 1, '2016-04-10 05:35:49'),
+(82, 1, 39, 1, '2016-04-10 05:35:49'),
+(83, 1, 40, 1, '2016-04-13 05:46:05'),
+(84, 1, 40, 1, '2016-04-13 05:46:05'),
+(85, 1, 40, 1, '2016-04-13 05:46:05');
 
 -- --------------------------------------------------------
 
@@ -154,11 +172,10 @@ INSERT INTO `cart_product` (`ID`, `product_id`, `cart_id`, `quantity`, `time`) V
 --
 
 CREATE TABLE IF NOT EXISTS `contact` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `message` varchar(200) NOT NULL,
-  PRIMARY KEY (`ID`)
+  `message` varchar(200) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
@@ -175,24 +192,22 @@ INSERT INTO `contact` (`ID`, `name`, `email`, `message`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `customer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` text NOT NULL,
   `pw` text NOT NULL,
-  `created` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+  `created` datetime NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id`, `name`, `email`, `pw`, `created`) VALUES
-(12, 'HTML', 'html@itsalie.com', 'yes', '2016-02-17 23:52:12'),
 (9, 'harry', 'zgp7777@gmail.com', '1234', '2016-02-17 19:22:52'),
-(10, 'customer1', 'kee@yke.com', '555', '2016-02-17 20:02:08'),
-(11, 'customer2', 'hha@ddp.com', 'hahahah', '2016-02-17 21:42:22'),
-(13, 'mouse', '7777@gmi.com', '111', '2016-02-18 09:29:31');
+(24, 'test1', 'z@g.c', '123', '2016-04-09 23:21:46'),
+(25, 'sss', 'zgp@gm', '123', '2016-04-09 23:30:17'),
+(23, 'sqltest', 'emailtest', 'pwtest', '2016-04-09 23:01:16');
 
 -- --------------------------------------------------------
 
@@ -201,24 +216,87 @@ INSERT INTO `customer` (`id`, `name`, `email`, `pw`, `created`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `SKU` varchar(100) NOT NULL,
   `item_price` decimal(15,2) NOT NULL,
   `description` varchar(100) NOT NULL,
   `path` varchar(256) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  `Quantity` int(11) DEFAULT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`ID`, `SKU`, `item_price`, `description`, `path`) VALUES
-(1, 'sk-2843y', '4.99', 'Rose', 'img/f1.jpg'),
-(2, 'sk-327623z', '3.99', 'Iris', 'img/iris.png'),
-(3, 'sk-438s3x', '4.59', 'Lily', 'img/lily.jpg'),
-(4, 'sk-yx28s9', '5.99', 'Sunflower\r\n', 'img/sunflower.jpg');
+INSERT INTO `product` (`ID`, `SKU`, `item_price`, `description`, `path`, `Quantity`) VALUES
+(1, 'sk-2843y', '4.99', 'Rose', 'img/f1.jpg', 3),
+(2, 'sk-327623z', '3.99', 'Iris', 'img/iris.png', 5),
+(3, 'sk-438s3x', '4.59', 'Lily', 'img/lily.jpg', 1),
+(4, 'sk-yx28s9', '5.99', 'Sunflower\r\n', 'img/sunflower.jpg', 2);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `cart_product`
+--
+ALTER TABLE `cart_product`
+ ADD PRIMARY KEY (`ID`), ADD KEY `product_id` (`product_id`), ADD KEY `cart_id` (`cart_id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=43;
+--
+-- AUTO_INCREMENT for table `cart_product`
+--
+ALTER TABLE `cart_product`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
