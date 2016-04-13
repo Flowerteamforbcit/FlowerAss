@@ -284,7 +284,8 @@ $('#productslistforhome').on('click', 'input[data-sku-add]', function () {
                 success: function (returnedData) {
                     console.log("cart cancel response: ", returnedData);
 
-
+                    // Get infomation from web storage and return the original quantity
+                    
                     // SESSION STORAGE - CLEAR THE SESSION
                     sessionStorage.clear();
 
