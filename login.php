@@ -5,6 +5,7 @@ include 'head.php';
 ?>
 
 <?php
+
 if(isset($_POST['submit'])){
     $errMsg = '';
         //username and password sent from Form
@@ -24,12 +25,17 @@ if(isset($_POST['submit'])){
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
         //case of Admin's login
-        if(($username == "harry") && count($results) > 0 && ($password == $results['pw'])){
+
+
+
+        if(($username == "harry") && count($results) > 0 && ( password_verify($password,$results['pw']))){
 
             $_SESSION['username'] = $results['name'];
+
             header('location:dashboard.php');
 
             exit;
+
         // case of regular login      
         }else if(count($results) > 0 && ($password == $results['pw'])){
             $_SESSION['username'] = $results['name'];
@@ -40,9 +46,9 @@ if(isset($_POST['submit'])){
         }else{
             $errMsg .= 'Username and Password are not found<br>';
         }
+
     }
 }
-
 ?>
 
 
