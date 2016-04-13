@@ -109,6 +109,8 @@ $(document).ready(function () {
             // console.log(this.getAttribute("data-sku-add"));
 
 
+            $('#startCart').click();
+
             // get the sku
             var sku = this.getAttribute("data-sku-add");
             var qty = $("input[data-sku-qty='" + sku + "']").val();
@@ -169,6 +171,8 @@ $(document).ready(function () {
 
 $('#productslistforhome').on('click', 'input[data-sku-add]', function () {
             //console.log(this.getAttribute("data-sku-add"));
+
+            $('#startCart').click();
 
             // get the sku
             var sku = this.getAttribute("data-sku-add");
