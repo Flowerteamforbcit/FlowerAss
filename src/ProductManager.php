@@ -21,7 +21,7 @@ class ProductManager {
 
     public function findProduct($SKU) {
         $params = array(":sku" => $SKU);
-        $sql = "SELECT SKU, item_price, description,  path  FROM product WHERE SKU = :sku";
+        $sql = "SELECT SKU, item_price, description, path, Quantity FROM product WHERE SKU = :sku";
 
         $rows = $this->db->query($sql, $params);
         if(count($rows) > 0) {
@@ -30,6 +30,7 @@ class ProductManager {
 
         return null;
     }
+    
 
 
 }

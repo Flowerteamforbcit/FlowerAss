@@ -204,3 +204,7 @@ html, body {
 #shopnameh3 point{
     font-family: 'Fredericka the Great', cursive;
 }
+
+#DBchecking{
+   color: red;
+}
