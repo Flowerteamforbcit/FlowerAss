@@ -19,9 +19,16 @@ if (Utils::isGET()) {
     $data = array("sku" => $sku, "price" => $price, "quantity"=>$quantity);
     
 
-} else {
-    $data = array("status" => "error", "msg" => "Only GET allowed.");
+} else { //Utils::isPOST()
 
+    $parameters = new Parameters("POST");
+    $sku = $parameters->getValue('sku');
+
+    $pm = new ProductManager();
+    //return an array of every products
+    $rows = $pm->listProducts();
 }
-echo json_encode($data);
+
+echo json_encode($rows);
+
 ?>

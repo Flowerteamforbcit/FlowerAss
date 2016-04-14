@@ -5,7 +5,7 @@ loadScripts();
 
 $data = array("status" => "not set!");
 
-if(Utils::isPOST()) {
+if (Utils::isPOST()) {
     // post means either to delete or add a user
     $parameters = new Parameters("POST");
 
@@ -14,7 +14,7 @@ if(Utils::isPOST()) {
     $id = $parameters->getValue('id');
 
     //$data = array("action" => $action, "name" => $login);
-    if($action == 'delete' && !empty($id)) {
+    if ($action == 'delete' && !empty($id)) {
 
         $pm = new ProductManager();
         $pm->deleteProduct($id);
@@ -22,14 +22,14 @@ if(Utils::isPOST()) {
         echo json_encode($data, JSON_FORCE_OBJECT);
         return;
 
-    } else if($action == 'update' && !empty($id)) {
+    } else if ($action == 'update' && !empty($id)) {
         $newSku = $parameters->getValue('newSku');
 
-        if(!empty($newSku)) {
+        if (!empty($newSku)) {
 
             $pm = new ProductManager();
             $count = $pm->updateProductSku($id, $newSku);
-            if($count > 0) {
+            if ($count > 0) {
                 $data = array("status" => "success", "msg" =>
                     "User '$id' updated with new first name ('$newSku').");
             } else {
@@ -43,7 +43,7 @@ if(Utils::isPOST()) {
         echo json_encode($data, JSON_FORCE_OBJECT);
         return;
 
-    }   else if($action == 'add') {
+    } else if ($action == 'add') {
         //$login, $email, $pw
         $newSku = $parameters->getValue('newSku');
         $newItemPrice = $parameters->getValue('newItemPrice');
@@ -51,7 +51,7 @@ if(Utils::isPOST()) {
         $newPath = $parameters->getValue('newPath');
         $newQuantity = $parameters->getValue('newQuantity');
 
-        if(!empty($newSku) && !empty($newItemPrice) && !empty($newDesc) && !empty($newPath) && !empty($newQuantity)) {
+        if (!empty($newSku) && !empty($newItemPrice) && !empty($newDesc) && !empty($newPath) && !empty($newQuantity)) {
             $data = array("status" => "success", "msg" => "User added.");
             $pm = new ProductManager();
             $pm->addProduct($newSku, $newItemPrice, $newDesc, $newPath, $newQuantity);
@@ -62,21 +62,21 @@ if(Utils::isPOST()) {
         echo json_encode($data, JSON_FORCE_OBJECT);
         return;
 
-    }else {
+    } else {
         $data = array("status" => "fail", "msg" => "Action not understood.");
     }
 
     echo json_encode($data, JSON_FORCE_OBJECT);
     return;
 
-} else if(Utils::isGET()) {
+} else if (Utils::isGET()) {
     // get means get the list of users
     $pm = new ProductManager();
     $rows = $pm->listProducts();
     $html = "";
-    if($rows != null) {
+    if ($rows != null) {
 
-        foreach($rows as $row) {
+        foreach ($rows as $row) {
             $id = $row['id'];
             $sku = $row['SKU'];
             $item_price = $row['item_price'];
@@ -109,7 +109,6 @@ if(Utils::isPOST()) {
     $data = array("status" => "error", "msg" => "Only GET and POST allowed.");
     echo json_encode($data, JSON_FORCE_OBJECT);
 }
-
 
 
 ?>
