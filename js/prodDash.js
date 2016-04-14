@@ -10,6 +10,24 @@ $(document).ready(function() {
                 //console.log("cart checkout response: ", returnedData);
                 $("#productsrows").html(returnedData);
                 //window.location.href = "user-editor.html";
+
+                $.ajax({
+                    url: "checkQuantity.php",
+                    type: "POST",
+                    dataType: "JSON",
+                    success: function(returnedData) {
+                        for(var i=0; i<returnedData.length;i++){
+                            if(returnedData[i]['Quantity'] ==0){
+                                alert("Hi Admin \n\nPlease check your item quantity");
+                            }
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+
+                        $("#p1").text(jqXHR.statusText);
+                    }
+
+                });
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR.statusText, textStatus);
