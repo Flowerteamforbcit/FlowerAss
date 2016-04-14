@@ -10,6 +10,8 @@ require 'aboutProduct.php';
         <table id="productTable" class="table">
             <thead>
                 <tr class="active">
+                    
+                    <th></th>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Price</th>
