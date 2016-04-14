@@ -1,5 +1,6 @@
 /*<![CDATA[*/
 $(document).ready(function () {
+    total = 0;
 
     var qtyCheckMessage = "";
     // FOR PUTTING OBJECTS INTO HTML5 WEB STORAGE - ADD METHODS TO THE STORAGE OBJECT
@@ -170,9 +171,14 @@ $('#productslist').on('click', 'input[data-sku-add]', function () {
                         return;
                     }
                     var item = {'sku': sku, 'qty': qty, date: aDate.getTime(), 'desc': desc, 'price': price};
+                    total += parseFloat(subtotal);
                     cartData['items'].push(item);
                     // clobber the old value
                     sessionStorage.setObject('autosave', cartData);
+
+                    //get the total
+         
+                    $("#totalPrice").html(total);
                 } else {
                     alert("Only one kind per Object is allowed");
                 }
@@ -245,11 +251,15 @@ $("#shoppingCart").on("click", "input", function () {
         var item = cartDataItems[i];
         // get the item based on the sku, qty, and date
         if (item['sku'] == thisInputSKU && item['date'] == thisInputDate) {
+            total -= parseFloat((Math.round((parseFloat(cartData.items[i]['qty']) * parseFloat(cartData.items[i]['price'])) * 100) / 100).toFixed(2))
+            
             // remove from web storage
             cartDataItems.splice(i, 1);
 
         }
     }
+     $("#totalPrice").html(total);
+
     cartData['items'] = cartDataItems;
     console.log('cart data stuff', cartData);
     // clobber the old value
@@ -309,6 +319,8 @@ $("#cancelCart").click(function () {
 
             // SESSION STORAGE - CLEAR THE SESSION
             sessionStorage.clear();
+            total = 0;            
+            $("#totalPrice").html(total);
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -356,5 +368,7 @@ $("#checkoutcart").click(function () {
         }
     });
     var shoppingCartList = $("#shoppingCart").html("");
+    location.reload();
+           sessionStorage.clear();
 });
 
