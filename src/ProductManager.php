@@ -13,8 +13,45 @@ class ProductManager {
         $this->db = DBConnector::getInstance();
     }
 
+    public function getProductProfile($userID) {
+
+        $rows = $this->db->query("select * from product where id = :name",
+            array(':name' => $userID));
+        //var_dump($rows[0]);
+        if(count($rows) == 1) {
+            return $rows[0];
+        }
+        // otherwise
+        return null;
+    }
+
+
+
+    public function updateProductSku($id, $newSku) {
+        $sql = "UPDATE product SET sku = '$newSku' WHERE id = '$id'";
+        $affectedRows = $this->db->affectRows($sql);
+        return $affectedRows;
+    }
+
+
+    public function deleteProduct($id) {
+        $sql = "DELETE from product WHERE ID = '$id'";
+        $affectedRows = $this->db->affectRows($sql);
+        return $affectedRows;
+    }
+
+    public function addProduct($SKU, $item_price, $path, $description, $quantity) {
+
+        $sql = "INSERT INTO product (SKU, item_price, path, description, Quantity)
+            VALUES ('$SKU', '$item_price', '$path', '$description', '$quantity')";
+        $affectedRows = $this->db->affectRows($sql);
+        return $affectedRows;
+    }
+
+
+
     public function listProducts() {
-        $sql = "SELECT SKU, item_price, path, description, Quantity FROM product";
+        $sql = "SELECT id, SKU, item_price, path, description, Quantity FROM product";
         $rows = $this->db->query($sql);
         return $rows;
     }
@@ -30,7 +67,8 @@ class ProductManager {
 
         return null;
     }
-    
+
+
 
 
 }
