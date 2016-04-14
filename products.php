@@ -19,8 +19,10 @@ $data = array("status" => "not set!");
             $price = $row['item_price'];
             $desc = $row['description'];
             $stock =$row['Quantity'];
+            $path = $row['path'];
 
             $html .= "<tr>
+            <td><img src='$path' height='60' width='45'/></td>
             <td data-sku-desc='$sku'>$desc</td>
             <td><input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/>/$stock</td>
 
