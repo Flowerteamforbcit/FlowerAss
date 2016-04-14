@@ -24,9 +24,6 @@ loadScripts();
 
         } else if($action == 'update' && !empty($id)) {
             $newLogin = $parameters->getValue('newLogin');
-
-
-            
    
             if(!empty($newLogin)) {
 
