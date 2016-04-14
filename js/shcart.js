@@ -129,20 +129,35 @@ $(document).ready(function () {
                 success: function (returnedData) {
                     console.log(returnedData);
 
-                    if(returnedData.quantity<=qty){
+                    if(returnedData.quantity<qty){
                         qtyCheckMessage = "No more quantity!!"
                         $("#DBchecking").html(qtyCheckMessage);
                         alert("No more quantity!!");
                     }else {
-                        // ALTERED FOR WEB STORAGE
-                        qtyCheckMessage = '';
-                        $("#DBchecking").html(qtyCheckMessage);
+                        var checking = sessionStorage.getObject('autosave');
+                        //console.log(checking.items[0].sku);
+                        var hasItem = false;
+                        if(checking.items != null){
+                            for(var i=0; i<checking.items.length; i++){
 
-                        var aDate = new Date();
-                        var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "' data-item-date='"
-                        + aDate.getTime() + "'>" + desc + " " + qty + " x $" + price + " = " + subtotal
-                        + " <input type='button' data-remove-button='remove' value='X'/></li>";
-                        shoppingCartList.append(item);
+                                if(checking.items[i].sku == sku){
+                                    hasItem = true;
+                                    break;
+                                }
+
+                            }
+
+                        }
+                        if(!Boolean(hasItem)){
+                            // ALTERED FOR WEB STORAGE
+                            qtyCheckMessage = '';
+                            $("#DBchecking").html(qtyCheckMessage);
+
+                            var aDate = new Date();
+                            var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "' data-item-date='"
+                            + aDate.getTime() + "'>" + desc + " " + qty + " x $" + price + " = " + subtotal
+                            + " <input type='button' data-remove-button='remove' value='X'/></li>";
+                            shoppingCartList.append(item);
 
 
                         // SESSION STORAGE - SAVE SKU AND QTY AS AN OBJECT IN THE
@@ -155,13 +170,19 @@ $(document).ready(function () {
                         cartData['items'].push(item);
                         // clobber the old value
                         sessionStorage.setObject('autosave', cartData);
-
+                    }else{
+                        alert("Only one kind per Object is allowed"); 
                     }
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log(jqXHR.statusText, textStatus);
+
+
+
                 }
-            });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR.statusText, textStatus);
+            }
+
+        });
 
 
 
@@ -306,16 +327,19 @@ $('#productslistforhome').on('click', 'input[data-sku-add]', function () {
             // retrieve all of the items from the cart:
             var items = $("#shoppingCart li");
             var itemArray = [];
+
             $.each(items, function (key, value) {
 
                 var item = {
                     sku: value.getAttribute("data-item-sku"),
-                    qty: value.getAttribute("data-item-qty")
+                    qty: value.getAttribute("data-item-qty")                    
                 };
                 itemArray.push(item);
             });
             var itemsAsJSON = JSON.stringify(itemArray);
             console.log("itemsAsJSON", itemsAsJSON);
+
+            var cartData = sessionStorage.getObject('autosave');
 
 
             console.log("Check out cart with the following items", itemArray);
