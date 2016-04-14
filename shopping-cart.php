@@ -37,6 +37,7 @@ require 'aboutProduct.php';
             <!--<li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
             <input type="button" data-remove-button="remove" value="X"/></li>-->
         </ul>
+        <h4>Total Price : <strong id="totalPrice"></strong></h4>
         <input type="button" value="Check Out" id="checkoutcart"/>
         <span style="display: inline; font-size: 8pt;"><i>You'll see taxes and other shipping costs (ha ha) during
             checkout.</i></span>
