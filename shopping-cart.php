@@ -14,6 +14,7 @@ require 'aboutProduct.php';
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Add</th>
+
                 </tr>
             </thead>
             <tbody id="productslist">

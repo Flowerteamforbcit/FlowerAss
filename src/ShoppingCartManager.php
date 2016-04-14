@@ -43,7 +43,9 @@ class ShoppingCartManager {
             $rows = $this->db->query($sql);
             $product_id = $rows[0]['ID'];
             $sql = "INSERT INTO cart_product (product_id, cart_id, quantity)
-                VALUES ($product_id, $cart_id, $qty)";
+                VALUES ($product_id, $cart_id, $qty);
+
+                UPDATE product SET quantity = quantity - '$qty' WHERE sku = '$sku'";
             $this->db->affectRows($sql);
         }
 

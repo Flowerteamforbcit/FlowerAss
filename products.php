@@ -18,9 +18,12 @@ $data = array("status" => "not set!");
             $sku = $row['SKU'];
             $price = $row['item_price'];
             $desc = $row['description'];
+            $stock =$row['Quantity'];
+
             $html .= "<tr>
             <td data-sku-desc='$sku'>$desc</td>
-            <td><input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/></td>
+            <td><input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/>/$stock</td>
+
             <td data-sku-price='$sku'>$price</td>
             <td><input data-sku-add='$sku' type='button' value='Add'/></td>
             </tr>";
