@@ -40,10 +40,10 @@ class ProductManager {
         return $affectedRows;
     }
 
-    public function addProduct($SKU, $item_price, $path, $description, $quantity) {
+    public function addProduct($SKU, $item_price,  $description, $path, $quantity) {
 
-        $sql = "INSERT INTO product (SKU, item_price, path, description, Quantity)
-            VALUES ('$SKU', '$item_price', '$path', '$description', '$quantity')";
+        $sql = "INSERT INTO product (SKU, item_price, description, path, Quantity)
+            VALUES ('$SKU', '$item_price',  '$description', '$path', '$quantity')";
         $affectedRows = $this->db->affectRows($sql);
         return $affectedRows;
     }
